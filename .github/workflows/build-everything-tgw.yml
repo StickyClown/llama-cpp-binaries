@@ -13,13 +13,6 @@ permissions:
   contents: write
 
 jobs:          
-  build_cuda_wheels_windows:
-    name: CUDA Wheels Windows
-    uses: ./.github/workflows/build-wheels-cuda.yml
-    with:
-      version: ${{ inputs.version }}
-      config: 'os:windows-2019'
-
   build_cuda_wheels_linux:
     name: CUDA Wheels Linux
     uses: ./.github/workflows/build-wheels-cuda.yml
@@ -33,14 +26,3 @@ jobs:
     with:
       version: ${{ inputs.version }}
       
-  build_wheels_macos:
-    name: MacOS Metal Wheels
-    uses: ./.github/workflows/build-wheels-macos.yml
-    with:
-      version: ${{ inputs.version }}
-      
-  build_wheels_rocm:
-    name: ROCm Wheels
-    uses: ./.github/workflows/build-wheels-rocm.yml
-    with:
-      version: ${{ inputs.version }}
